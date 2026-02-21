@@ -15,10 +15,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-6 right-0 left-0 z-50 mx-4 rounded-full border border-white/10 bg-white/5 px-4 py-3 shadow-lg ring-1 ring-black/5 backdrop-blur-lg transition-all duration-300 md:static md:mx-0 md:rounded-none md:border-none md:bg-transparent md:px-0 md:pt-8 md:shadow-none md:ring-0 md:backdrop-blur-none">
-      <div className="flex items-center justify-between md:mx-auto md:max-w-7xl">
+    <nav className="fixed top-4 right-0 left-0 z-50 mx-4 rounded-full border border-white/10 bg-white/5 px-4 py-3 shadow-lg ring-1 ring-black/5 backdrop-blur-lg transition-all duration-300 md:static md:mx-0 md:rounded-none md:border-none md:bg-transparent md:px-0 md:pt-8 md:shadow-none md:ring-0 md:backdrop-blur-none">
+      <div className="flex items-center justify-between gap-4 md:mx-auto md:max-w-7xl">
         {/* Logo */}
-        <div>
+        <div className="shrink-0">
           <Brand />
         </div>
 
@@ -62,7 +62,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="p-2 text-white focus:outline-none md:hidden"
+          className="rounded-lg p-2 text-white hover:bg-white/10 focus:outline-none md:hidden"
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -70,8 +70,8 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="bg-pitch-deep/90 animate-fade-in-down absolute right-4 left-4 mt-2 rounded-2xl border border-white/10 p-4 shadow-2xl backdrop-blur-xl md:hidden">
-          <ul className="flex flex-col gap-4">
+        <div className="animate-fade-in-down bg-pitch-deep/95 absolute top-full right-4 left-4 mt-3 rounded-2xl border border-white/10 p-4 shadow-2xl backdrop-blur-xl md:hidden">
+          <ul className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
@@ -81,13 +81,13 @@ const Navbar = () => {
                   offset={-80}
                   duration={500}
                   onClick={() => setIsOpen(false)}
-                  className="block cursor-pointer rounded-lg px-4 py-2 text-base font-medium text-white/80 hover:bg-white/5 hover:text-white"
+                  className="block cursor-pointer rounded-xl px-4 py-3 text-base font-medium text-white/80 hover:bg-white/10 hover:text-white"
                 >
                   {link.name}
                 </Link>
               </li>
             ))}
-            <li>
+            <li className="pt-2">
               <Link
                 to="contact"
                 spy={true}

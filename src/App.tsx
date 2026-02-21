@@ -1,13 +1,13 @@
 import Navbar from "./components/navbar";
-// import Brand from "./components/brand";
 import Sparkle from "./assets/icons/sparkle.svg?react";
-import Social from "./assets/icons/social.svg?react";
-import Design from "./assets/icons/design.svg?react";
-import Content from "./assets/icons/content.svg?react";
-import Dev from "./assets/icons/dev.svg?react";
-import Seo from "./assets/icons/seo.svg?react";
-import Brand from "./assets/icons/brand.svg?react";
 import Marquee from "react-fast-marquee";
+import {
+  marqueeServices,
+  stats,
+  services,
+  portfolioFilters,
+  testimonials,
+} from "./data/mockData";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
               <Sparkle className="size-4 fill-[#9D86FF] text-[#9D86FF]" />
               Available For Work
             </div>
-            <h1 className="mt-4 text-4xl leading-[1.1] font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="mt-4 text-4xl leading-[1.1] font-bold tracking-tight text-white sm:text-5xl">
               Your Creative Partner Helping Businesses Scale With Confidence.
             </h1>
             <p className="my-4 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
@@ -51,13 +51,7 @@ function App() {
       <div className="bg-linear-to-b from-[#9D86FF] to-[#7D52FD] py-2">
         <div className="flex w-full overflow-hidden bg-white py-4 whitespace-nowrap">
           <Marquee autoFill pauseOnHover>
-            {[
-              "Social Media Management",
-              "Brand Design",
-              "Content Writing",
-              "UI/UX Design",
-              "Website Development",
-            ].map((service, idx) => (
+            {marqueeServices.map((service, idx) => (
               <div
                 key={idx}
                 className="text-pitch-deep flex shrink-0 items-center gap-2 px-10 text-base"
@@ -71,11 +65,14 @@ function App() {
       </div>
 
       {/* About */}
-      <section id="about" className="relative px-6 py-24 md:px-8">
+      <section
+        id="about"
+        className="relative px-6 py-16 sm:py-20 md:px-8 lg:py-24"
+      >
         {/* LEFT HALF CIRCLE */}
-        <div className="pointer-events-none absolute top-1/2 -left-80 h-125 w-125 -translate-y-1/2 rounded-full bg-[#7D52FD] blur-[180px]" />
+        <div className="pointer-events-none absolute top-1/2 -left-80 h-100 w-100 -translate-y-1/2 rounded-full bg-[#7D52FD] blur-[200px]" />
         {/* RIGHT HALF CIRCLE */}
-        <div className="pointer-events-none absolute top-1/2 -right-80 h-125 w-125 -translate-y-1/2 rounded-full bg-[#7D52FD] blur-[180px]" />
+        <div className="pointer-events-none absolute top-1/2 -right-80 hidden h-100 w-100 -translate-y-1/2 rounded-full bg-[#7D52FD] blur-[200px] md:block" />
 
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
@@ -91,10 +88,10 @@ function App() {
 
             {/* Content */}
             <div>
-              <h2 className="mb-6 text-4xl font-bold text-[#9D86FF] md:text-[40px]">
+              <h2 className="mb-6 text-4xl font-bold text-[#9D86FF]">
                 ABOUT US
               </h2>
-              <p className="mb-6 text-base leading-relaxed sm:text-lg md:text-xl">
+              <p className="mb-6 text-base leading-relaxed sm:text-lg">
                 Pitchworks is a creative agency that partners with businesses to
                 make their brand visible by the right audience. We offer
                 services in website development, content writing, design,
@@ -104,17 +101,13 @@ function App() {
             </div>
           </div>
           {/* Stats Cards */}
-          <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {[
-              { number: "07", symbol: "+", label: "Years of Experience" },
-              { number: "150", symbol: "+", label: "Projects Completed" },
-              { number: "100", symbol: "%", label: "Client Satisfaction" },
-            ].map((stat, idx) => (
+          <div className="mt-10 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-3">
+            {stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="rounded-2xl border border-[#FFFFFF1F] bg-[#FFFFFF14] p-8 text-center shadow-lg backdrop-blur-lg"
+                className="rounded-2xl border border-[#FFFFFF1F] bg-[#FFFFFF14] p-8 text-center shadow-lg"
               >
-                <p className="mb-2 text-5xl font-bold text-white">
+                <p className="mb-2 text-4xl font-bold text-white">
                   {stat.number}
                   <span className="text-[#9D86FF]">{stat.symbol}</span>
                 </p>
@@ -126,7 +119,7 @@ function App() {
       </section>
 
       {/* Our Specialities */}
-      <section id="services" className="px-6 py-24 md:px-8">
+      <section id="services" className="px-6 py-16 sm:py-20 md:px-8 lg:py-24">
         <div className="container mx-auto bg-[url('/images/eclipse-bg.png')] bg-contain bg-center bg-no-repeat">
           {/* Section Header */}
           <p className="mb-6 text-center text-sm font-semibold tracking-wider text-[#9D86FF] uppercase">
@@ -139,47 +132,10 @@ function App() {
 
           {/* Service Cards Grid */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                icon: <Social />,
-                title: "Social Media Management",
-                description:
-                  "We manage your social media presence, creating engaging content, running campaigns, and analyzing performance to grow your brand.",
-              },
-              {
-                icon: <Brand />,
-                title: "Brand Design",
-                description:
-                  "We create compelling brand identities that resonate with your audience and set you apart from the competition.",
-              },
-              {
-                icon: <Dev />,
-                title: "Web Development",
-                description:
-                  "We build responsive, fast, and user-friendly websites that convert visitors into customers and drive business growth.",
-              },
-              {
-                icon: <Content />,
-                title: "Content Strategy",
-                description:
-                  "We develop content strategies that engage your audience, build trust, and drive meaningful interactions with your brand.",
-              },
-              {
-                icon: <Seo />,
-                title: "SEO Optimization",
-                description:
-                  "We optimize your online presence to improve search rankings, increase visibility, and attract more qualified leads.",
-              },
-              {
-                icon: <Design />,
-                title: "UI/UX Design",
-                description:
-                  "We design intuitive user experiences that delight users and make your digital products easy to use and navigate.",
-              },
-            ].map((service, idx) => (
+            {services.map((service, idx) => (
               <div
                 key={idx}
-                className="rounded-2xl border border-[#FFFFFF1F] bg-[#FFFFFF14] p-6 shadow-lg backdrop-blur-lg transition-all duration-300 hover:scale-105"
+                className="rounded-2xl border border-[#FFFFFF1F] bg-[#FFFFFF14] p-6 shadow-lg transition-all duration-300 hover:scale-105"
               >
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="mb-3 text-xl font-bold text-white">
@@ -195,7 +151,10 @@ function App() {
       </section>
 
       {/* Projects/Portfolio */}
-      <section id="portfolio" className="bg-pitch-deep px-6 py-24 md:px-8">
+      <section
+        id="portfolio"
+        className="bg-pitch-deep px-6 py-16 sm:py-20 md:px-8 lg:py-24"
+      >
         <div className="container mx-auto">
           {/* Section Header */}
           <p className="mb-6 text-center text-sm font-semibold tracking-wider text-[#9D86FF] uppercase">
@@ -208,20 +167,18 @@ function App() {
 
           {/* Filter Buttons */}
           <div className="mb-12 flex flex-wrap justify-center gap-4">
-            {["All", "Web Design", "App Design", "Branding", "Marketing"].map(
-              (filter, idx) => (
-                <button
-                  key={idx}
-                  className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                    idx === 0
-                      ? "text-pitch-deep bg-white"
-                      : "bg-[linear-gradient(153.09deg,rgba(255,255,255,0.12)_16.83%,rgba(255,255,255,0.08)_85.44%)] text-white/80 backdrop-blur-lg hover:text-white"
-                  }`}
-                >
-                  {filter}
-                </button>
-              ),
-            )}
+            {portfolioFilters.map((filter, idx) => (
+              <button
+                key={idx}
+                className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
+                  idx === 0
+                    ? "text-pitch-deep bg-white"
+                    : "bg-[linear-gradient(153.09deg,rgba(255,255,255,0.12)_16.83%,rgba(255,255,255,0.08)_85.44%)] text-white/80 backdrop-blur-lg hover:text-white"
+                }`}
+              >
+                {filter}
+              </button>
+            ))}
           </div>
 
           {/* Project Grid - Placeholder for now */}
@@ -232,7 +189,7 @@ function App() {
       </section>
 
       {/* Testimonials */}
-      <section id="reviews" className="px-6 py-24 md:px-8">
+      <section id="reviews" className="px-6 py-16 sm:py-20 md:px-8 lg:py-24">
         <div className="container mx-auto">
           {/* Section Header */}
           <p className="mb-6 text-center text-sm font-semibold tracking-wider text-[#9D86FF] uppercase">
@@ -245,32 +202,7 @@ function App() {
 
           {/* Testimonial Cards Grid */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {[
-              {
-                quote:
-                  "PitchWorks helped us create a stunning website that perfectly represents our brand. We couldn't be happier with the results.",
-                name: "Sarah Johnson",
-                title: "CEO, TechStart Inc.",
-              },
-              {
-                quote:
-                  "Their social media management transformed our online presence. Our engagement has increased by 300% in just three months.",
-                name: "Michael Chen",
-                title: "Founder, Creative Studio",
-              },
-              {
-                quote:
-                  "The team's attention to detail and creative approach exceeded our expectations. Highly recommend their services.",
-                name: "Emily Rodriguez",
-                title: "Marketing Director, Growth Co.",
-              },
-              {
-                quote:
-                  "PitchWorks delivered a complete brand redesign that elevated our business. Professional, efficient, and results-driven.",
-                name: "David Thompson",
-                title: "Owner, Thompson Design",
-              },
-            ].map((testimonial, idx) => (
+            {testimonials.map((testimonial, idx) => (
               <div
                 key={idx}
                 className="rounded-2xl border border-[#FFFFFF1F] bg-[#FFFFFF14] p-6 shadow-lg backdrop-blur-lg"
@@ -300,7 +232,7 @@ function App() {
       {/* Call-to-Action Footer */}
       <section
         id="contact"
-        className="bg-pitch-deep rounded-t-[120px] px-6 py-24 md:px-8"
+        className="bg-pitch-deep rounded-t-[80px] px-6 py-16 sm:py-20 md:rounded-t-[100px] md:px-8 lg:rounded-t-[120px] lg:py-24"
       >
         <div className="container mx-auto flex flex-col items-center text-center">
           <div className="flex max-w-fit items-center gap-2 rounded-full border-white/10 bg-[linear-gradient(153.09deg,rgba(255,255,255,0.12)_16.83%,rgba(255,255,255,0.08)_85.44%)] px-4 py-2 text-sm shadow-lg ring-1 ring-black/5 backdrop-blur-lg">
