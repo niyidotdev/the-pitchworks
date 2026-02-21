@@ -11,12 +11,15 @@ import Marquee from "react-fast-marquee";
 
 function App() {
   return (
-    <section>
-      <div className="main-background px-6 md:px-8">
+    <section className="overflow-x-hidden">
+      <div
+        id="hero"
+        className="bg-[url('/images/hero-bg-blur.png')] bg-contain bg-no-repeat px-6 md:px-8"
+      >
         <Navbar />
 
         {/* Hero section */}
-        <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 pt-28 pb-12 md:grid-cols-2 md:pt-10 md:pb-16">
+        <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 pt-32 pb-12 md:grid-cols-2 md:pt-10 md:pb-16">
           <div>
             <div className="flex max-w-fit items-center gap-2 rounded-full border-white/10 bg-[linear-gradient(153.09deg,rgba(255,255,255,0.12)_16.83%,rgba(255,255,255,0.08)_85.44%)] px-4 py-2 text-sm shadow-lg ring-1 ring-black/5 backdrop-blur-lg">
               <Sparkle className="size-4 fill-[#9D86FF] text-[#9D86FF]" />
@@ -45,30 +48,35 @@ function App() {
       </div>
 
       {/* Services */}
-      {/* <div className="bg-linear-to-b from-[#9D86FF] to-[#7D52FD] py-2"> */}
-      <div className="flex w-full overflow-hidden bg-white py-4 whitespace-nowrap">
-        <Marquee autoFill pauseOnHover>
-          {[
-            "Social Media Management",
-            "Brand Design",
-            "Content Writing",
-            "UI/UX Design",
-            "Website Development",
-          ].map((service, idx) => (
-            <div
-              key={idx}
-              className="text-pitch-deep flex shrink-0 items-center gap-2 px-10 text-base"
-            >
-              <Sparkle className="size-4 fill-[#9D86FF] text-[#9D86FF]" />
-              {service}
-            </div>
-          ))}
-        </Marquee>
+      <div className="bg-linear-to-b from-[#9D86FF] to-[#7D52FD] py-2">
+        <div className="flex w-full overflow-hidden bg-white py-4 whitespace-nowrap">
+          <Marquee autoFill pauseOnHover>
+            {[
+              "Social Media Management",
+              "Brand Design",
+              "Content Writing",
+              "UI/UX Design",
+              "Website Development",
+            ].map((service, idx) => (
+              <div
+                key={idx}
+                className="text-pitch-deep flex shrink-0 items-center gap-2 px-10 text-base"
+              >
+                <Sparkle className="size-4 fill-[#9D86FF] text-[#9D86FF]" />
+                {service}
+              </div>
+            ))}
+          </Marquee>
+        </div>
       </div>
-      {/* </div> */}
 
       {/* About */}
-      <section id="about" className="px-6 py-24 md:px-8">
+      <section id="about" className="relative px-6 py-24 md:px-8">
+        {/* LEFT HALF CIRCLE */}
+        <div className="pointer-events-none absolute top-1/2 -left-80 h-125 w-125 -translate-y-1/2 rounded-full bg-[#7D52FD] blur-[180px]" />
+        {/* RIGHT HALF CIRCLE */}
+        <div className="pointer-events-none absolute top-1/2 -right-80 h-125 w-125 -translate-y-1/2 rounded-full bg-[#7D52FD] blur-[180px]" />
+
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
             {/* Image */}
@@ -119,7 +127,7 @@ function App() {
 
       {/* Our Specialities */}
       <section id="services" className="px-6 py-24 md:px-8">
-        <div className="container mx-auto">
+        <div className="container mx-auto bg-[url('/images/eclipse-bg.png')] bg-contain bg-center bg-no-repeat">
           {/* Section Header */}
           <p className="mb-6 text-center text-sm font-semibold tracking-wider text-[#9D86FF] uppercase">
             Services
@@ -290,7 +298,10 @@ function App() {
       </section>
 
       {/* Call-to-Action Footer */}
-      <section className="bg-pitch-deep rounded-t-[120px] px-6 py-24 md:px-8">
+      <section
+        id="contact"
+        className="bg-pitch-deep rounded-t-[120px] px-6 py-24 md:px-8"
+      >
         <div className="container mx-auto flex flex-col items-center text-center">
           <div className="flex max-w-fit items-center gap-2 rounded-full border-white/10 bg-[linear-gradient(153.09deg,rgba(255,255,255,0.12)_16.83%,rgba(255,255,255,0.08)_85.44%)] px-4 py-2 text-sm shadow-lg ring-1 ring-black/5 backdrop-blur-lg">
             <Sparkle className="size-4 fill-[#9D86FF] text-[#9D86FF]" />

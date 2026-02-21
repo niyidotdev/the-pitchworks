@@ -19,25 +19,4 @@ body {
   padding: 0;
   background: var(--color-pitch-purple);
   color: white;
-  /* min-height: 100vh; */
-}
-
-.main-background {
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(93, 44, 168, 0.4) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 85% 10%,
-      rgba(59, 40, 204, 0.25) 0%,
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 15% 10%,
-      rgba(59, 40, 204, 0.25) 0%,
-      transparent 40%
-    );
-  background-attachment: fixed;
 }
