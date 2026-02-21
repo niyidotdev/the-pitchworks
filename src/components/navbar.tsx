@@ -14,8 +14,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-6 left-1/2 z-50 mx-auto w-[96%] -translate-x-1/2 rounded-full border border-white/10 bg-white/5 px-4 py-3 shadow-lg ring-1 ring-black/5 backdrop-blur-lg transition-all duration-300 md:rounded-none md:border-none md:bg-transparent md:px-6 md:py-0 md:shadow-none md:ring-0 md:backdrop-blur-none">
-      <div className="flex items-center justify-between">
+    <nav className="fixed top-6 right-0 left-0 z-50 mx-4 rounded-full border border-white/10 bg-white/5 px-4 py-3 shadow-lg ring-1 ring-black/5 backdrop-blur-lg transition-all duration-300 md:static md:mx-0 md:rounded-none md:border-none md:bg-transparent md:px-0 md:pt-8 md:shadow-none md:ring-0 md:backdrop-blur-none">
+      <div className="flex items-center justify-between md:mx-auto md:max-w-7xl">
         {/* Logo */}
         <div>
           <Brand />
@@ -61,7 +61,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="bg-pitch-deep/90 animate-fade-in-down absolute mt-2 w-full rounded-2xl border border-white/10 p-4 shadow-2xl backdrop-blur-xl md:hidden">
+        <div className="bg-pitch-deep/90 animate-fade-in-down absolute right-4 left-4 mt-2 rounded-2xl border border-white/10 p-4 shadow-2xl backdrop-blur-xl md:hidden">
           <ul className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <li key={link.name}>

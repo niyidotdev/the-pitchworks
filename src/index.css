@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-pitch-deep: #0b0b15;
-  --color-pitch-purple: #5d2ca8;
+  --color-pitch-deep: #1e1830;
+  --color-pitch-purple: #151022;
   --color-pitch-violet: #3b28cc;
   --color-pitch-accent: #ff4dad;
 }
@@ -17,7 +17,7 @@
 body {
   margin: 0;
   padding: 0;
-  /* background-color: var(--color-pitch-deep); */
+  background: var(--color-pitch-purple);
   color: white;
   /* min-height: 100vh; */
 }
