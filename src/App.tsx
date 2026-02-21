@@ -42,7 +42,12 @@ function App() {
             </div>
           </div>
           <div className="w-full">
-            <img src="/images/hero.png" alt="hero image" className="w-full" />
+            <img
+              src="/images/hero.png"
+              alt="hero image"
+              fetchPriority="high"
+              className="w-full"
+            />
           </div>
         </section>
       </div>
@@ -77,15 +82,7 @@ function App() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
             {/* Image */}
-            <div className="relative flex items-center justify-center">
-              {/* <div className="absolute z-10 h-96 w-96 rounded-full bg-white opacity-10" />
-            <img
-              src="/images/about.png"
-              alt="About Us"
-              className="relative z-20 w-full max-w-md object-contain"
-            /> */}
-            </div>
-
+            <div></div>
             {/* Content */}
             <div>
               <h2 className="mb-6 text-4xl font-bold text-[#9D86FF]">
@@ -232,8 +229,11 @@ function App() {
       {/* Call-to-Action Footer */}
       <section
         id="contact"
-        className="bg-pitch-deep rounded-t-[80px] px-6 py-16 sm:py-20 md:rounded-t-[100px] md:px-8 lg:rounded-t-[120px] lg:py-24"
+        className="bg-pitch-deep relative rounded-t-[80px] px-6 py-16 sm:py-20 md:rounded-t-[100px] md:px-8 lg:rounded-t-[120px] lg:py-24"
       >
+        {/* TOP HORIZONTAL GLOW */}
+        <div className="pointer-events-none absolute top-0 left-1/2 -z-10 -mt-30 h-70 w-105 -translate-x-1/2 rounded-full bg-[#7D52FD] blur-[200px]" />
+
         <div className="container mx-auto flex flex-col items-center text-center">
           <div className="flex max-w-fit items-center gap-2 rounded-full border-white/10 bg-[linear-gradient(153.09deg,rgba(255,255,255,0.12)_16.83%,rgba(255,255,255,0.08)_85.44%)] px-4 py-2 text-sm shadow-lg ring-1 ring-black/5 backdrop-blur-lg">
             <Sparkle className="size-4 fill-[#9D86FF] text-[#9D86FF]" />
