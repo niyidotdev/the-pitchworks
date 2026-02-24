@@ -70,19 +70,23 @@ function App() {
       </div>
 
       {/* About */}
-      <section
-        id="about"
-        className="relative px-6 py-16 sm:py-20 md:px-8 lg:py-24"
-      >
+      <section id="about" className="relative px-6 py-16 sm:py-20 md:px-8">
         {/* LEFT HALF CIRCLE */}
         <div className="pointer-events-none absolute top-1/2 -left-80 h-100 w-100 -translate-y-1/2 rounded-full bg-[#7D52FD] blur-[200px]" />
         {/* RIGHT HALF CIRCLE */}
         <div className="pointer-events-none absolute top-1/2 -right-80 hidden h-100 w-100 -translate-y-1/2 rounded-full bg-[#7D52FD] blur-[200px] md:block" />
 
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
+          <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
             {/* Image */}
-            <div></div>
+            <div className="place-self-center">
+              <img
+                src="/images/about.png"
+                width={360}
+                height={360}
+                alt="lady holding laptop"
+              />
+            </div>
             {/* Content */}
             <div>
               <h2 className="mb-6 text-4xl font-bold text-[#9D86FF]">
