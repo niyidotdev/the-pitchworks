@@ -66,6 +66,57 @@ export const portfolioFilters = [
   "Marketing",
 ];
 
+export const portfolioProjects = [
+  {
+    title: "SaaS Dashboard Website",
+    category: "Web Design",
+    image: "/images/portfolio-saas-dashboard.jpg",
+    description:
+      "A conversion-focused marketing site for a B2B SaaS platform, designed to clearly explain features and drive demo bookings.",
+    tags: ["Landing Page", "UI/UX", "Webflow"],
+  },
+  {
+    title: "Wellness Mobile App UI",
+    category: "App Design",
+    image: "/images/portfolio-wellness-app.jpg",
+    description:
+      "Mobile app interface for a wellness brand with calming visuals, habit tracking flows, and clear onboarding.",
+    tags: ["iOS", "Product Design", "Prototyping"],
+  },
+  {
+    title: "E-commerce Brand Refresh",
+    category: "Branding",
+    image: "/images/portfolio-ecommerce-brand.jpg",
+    description:
+      "Complete visual identity refresh for a fashion e-commerce brand, including logo, palette, and social templates.",
+    tags: ["Logo", "Identity System", "Guidelines"],
+  },
+  {
+    title: "Performance Marketing Funnel",
+    category: "Marketing",
+    image: "/images/portfolio-marketing-funnel.jpg",
+    description:
+      "Multi-channel campaign funnel with optimized landing pages and email sequences to improve lead quality.",
+    tags: ["Paid Ads", "Email", "CRO"],
+  },
+  {
+    title: "Creative Studio Portfolio Site",
+    category: "Web Design",
+    image: "/images/portfolio-creative-studio.jpg",
+    description:
+      "Portfolio site for a creative studio highlighting case studies with strong visuals and storytelling.",
+    tags: ["Case Studies", "Responsive", "Animations"],
+  },
+  {
+    title: "Founder Personal Brand Kit",
+    category: "Branding",
+    image: "/images/portfolio-personal-brand.jpg",
+    description:
+      "Personal brand system for a founder including typography, color system, and social media post templates.",
+    tags: ["Personal Brand", "Social", "Templates"],
+  },
+];
+
 export const testimonials = [
   {
     quote:

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "./components/navbar";
 import Sparkle from "./assets/icons/sparkle.svg?react";
 import Marquee from "react-fast-marquee";
@@ -6,10 +7,20 @@ import {
   stats,
   services,
   portfolioFilters,
+  portfolioProjects,
   testimonials,
 } from "./data/mockData";
 
 function App() {
+  const [activePortfolioFilter, setActivePortfolioFilter] = useState("All");
+
+  const filteredPortfolioProjects =
+    activePortfolioFilter === "All"
+      ? portfolioProjects
+      : portfolioProjects.filter(
+          (project) => project.category === activePortfolioFilter,
+        );
+
   return (
     <section className="overflow-x-hidden">
       <div
@@ -171,10 +182,12 @@ function App() {
             {portfolioFilters.map((filter, idx) => (
               <button
                 key={idx}
+                type="button"
+                onClick={() => setActivePortfolioFilter(filter)}
                 className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                  idx === 0
-                    ? "text-pitch-deep bg-white"
-                    : "bg-[linear-gradient(153.09deg,rgba(255,255,255,0.12)_16.83%,rgba(255,255,255,0.08)_85.44%)] text-white/80 backdrop-blur-lg hover:text-white"
+                  activePortfolioFilter === filter
+                    ? "text-pitch-deep bg-white shadow-lg shadow-black/20"
+                    : "bg-[linear-gradient(153.09deg,rgba(255,255,255,0.12)_16.83%,rgba(255,255,255,0.08)_85.44%)] text-white/80 backdrop-blur-lg hover:text-white hover:shadow-lg hover:shadow-black/20"
                 }`}
               >
                 {filter}
@@ -182,9 +195,45 @@ function App() {
             ))}
           </div>
 
-          {/* Project Grid - Placeholder for now */}
+          {/* Project Grid */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* Projects will be added here */}
+            {filteredPortfolioProjects.map((project, idx) => (
+              <article
+                key={`${project.title}-${idx}`}
+                className="flex flex-col overflow-hidden rounded-2xl border border-[#FFFFFF1F] bg-[#FFFFFF0F] shadow-lg shadow-black/20 backdrop-blur-lg"
+              >
+                <div className="relative h-40 w-full bg-linear-to-tr from-[#9D86FF]/50 via-[#7D52FD]/30 to-[#9D86FF]/10">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.28),transparent_55%)]" />
+                  <div className="absolute inset-0 flex items-end p-4">
+                    <span className="inline-flex items-center rounded-full bg-black/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase backdrop-blur-sm">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex flex-1 flex-col justify-between p-6">
+                  <div>
+                    <h3 className="mb-2 text-lg font-semibold text-white">
+                      {project.title}
+                    </h3>
+                    <p className="mb-4 text-sm leading-relaxed text-white/70">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {project.tags?.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-white/70"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
