@@ -30,7 +30,7 @@ const Navbar = () => {
                 to={link.to}
                 spy={true}
                 smooth={true}
-                offset={-80}
+                // offset={-80}
                 duration={500}
                 onClick={() => setActive(link.name)}
                 className={`cursor-pointer rounded-full px-4 py-3 text-sm font-medium transition-all duration-200 ${
