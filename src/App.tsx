@@ -10,6 +10,7 @@ import {
   portfolioProjects,
   testimonials,
 } from "./data/mockData";
+import { Link } from "react-scroll";
 
 function App() {
   const [activePortfolioFilter, setActivePortfolioFilter] = useState("All");
@@ -47,9 +48,11 @@ function App() {
               <button className="text-pitch-deep transform cursor-pointer rounded-full bg-white px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105">
                 Let's Talk
               </button>
-              <button className="transform cursor-pointer rounded-full bg-[linear-gradient(153.09deg,rgba(255,255,255,0.12)_16.83%,rgba(255,255,255,0.08)_85.44%)] px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105">
-                Our Works
-              </button>
+              <Link to="portfolio" spy={true} smooth={true} duration={500}>
+                <button className="transform cursor-pointer rounded-full bg-[linear-gradient(153.09deg,rgba(255,255,255,0.12)_16.83%,rgba(255,255,255,0.08)_85.44%)] px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105">
+                  Our Works
+                </button>
+              </Link>
             </div>
           </div>
           <div className="w-full">
