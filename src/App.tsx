@@ -45,9 +45,16 @@ function App() {
               tailored to your brand’s goals.
             </p>
             <div className="flex gap-4">
-              <button className="text-pitch-deep transform cursor-pointer rounded-full bg-white px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105">
-                Let's Talk
-              </button>
+              <a
+                href="https://wa.me/+2347068837570?text=Hello!%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat with us on WhatsApp"
+              >
+                <button className="text-pitch-deep transform cursor-pointer rounded-full bg-white px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105">
+                  Let's Talk
+                </button>
+              </a>
               <Link to="portfolio" spy={true} smooth={true} duration={500}>
                 <button className="transform cursor-pointer rounded-full bg-[linear-gradient(153.09deg,rgba(255,255,255,0.12)_16.83%,rgba(255,255,255,0.08)_85.44%)] px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105">
                   Our Works
@@ -298,9 +305,16 @@ function App() {
           <h2 className="my-8 max-w-4xl text-4xl font-bold text-white md:text-5xl">
             Let's work together to transform our ideas into stunning designs.
           </h2>
-          <button className="text-pitch-deep transform cursor-pointer rounded-full bg-white px-8 py-3 text-base font-semibold transition-all duration-300 hover:scale-105">
-            Hire Us Now
-          </button>
+          <a
+            href="https://wa.me/+2347068837570?text=Hello!%20I%20would%20like%20to%20inquire%20about%20your%20services."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat with us on WhatsApp"
+          >
+            <button className="text-pitch-deep transform cursor-pointer rounded-full bg-white px-8 py-3 text-base font-semibold transition-all duration-300 hover:scale-105">
+              Hire Us Now
+            </button>
+          </a>
         </div>
       </section>
 
